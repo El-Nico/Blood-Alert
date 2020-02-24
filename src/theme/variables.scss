@@ -226,4 +226,9 @@
   ion-title.title-large {
     --color: white;
   }
+
+  ion-thumbnail {
+    --ion-border-radius:50px;
+    --ion-size:100px;
+}
 }

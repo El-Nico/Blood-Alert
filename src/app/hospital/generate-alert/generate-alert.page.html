@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Generate Alert</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <form>
+   <ion-list>
+     <ion-item>
+       <ion-label>blood type</ion-label>
+          <ion-select interface="popover">
+            <ion-select-option value="aplus">A+</ion-select-option>
+            <ion-select-option value="aminus">A-</ion-select-option>
+            <ion-select-option value="bplus">B+</ion-select-option>
+            <ion-select-option value="bminus">B-</ion-select-option>
+            <ion-select-option value="oplus">O+</ion-select-option>
+            <ion-select-option value="ominus">O-</ion-select-option>
+            <ion-select-option value="abplus">AB+</ion-select-option>
+            <ion-select-option value="abminus">AB-</ion-select-option>
+          </ion-select>
+     </ion-item>
+     <ion-item>
+      <ion-button (click)="showAvailableDonors()">CREATE ALERT!</ion-button>
+    </ion-item>
+   </ion-list>
+ </form>
+
+</ion-content>

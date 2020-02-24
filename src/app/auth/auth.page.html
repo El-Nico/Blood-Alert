@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login/Signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="loginSignup">
+  <ion-list>
+    <ion-item>
+      <ion-label>email</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>password</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button routerLink="/">Login</ion-button>
+
+  <ion-button (click)="onClickNotAMember()">not a member?</ion-button>
+</div>
+
+  <div id="notAMember" *ngIf="notAMember">
+   <ion-text>Register as a </ion-text>
+   <ion-buttons>
+     <ion-button color="primary" routerLink="/auth/register-donor">Donor</ion-button>
+     <ion-button color="secondary" [routerLink]="[{outlets: { authOutlet: ['/auth/register-hospital']}}]">Hospital</ion-button>
+   </ion-buttons>
+  </div>
+  <ion-router-outlet name="authOutlet"></ion-router-outlet>
+   <!-- <app-register-donor *ngIf="registerDonor"></app-register-donor>
+   <app-register-hospital *ngIf="registerHospital"></app-register-hospital> -->
+
+  
+</ion-content>
