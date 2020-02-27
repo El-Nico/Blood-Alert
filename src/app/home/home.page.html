@@ -19,9 +19,10 @@
     </ion-toolbar>
   </ion-header>
   
-  <app-story-component></app-story-component>
-  <app-story-component></app-story-component>
-  <app-story-component></app-story-component>
-  <app-story-component></app-story-component>
-  <app-story-component></app-story-component>
+  
+  <app-story-component *ngFor= "let story of ourStories"
+  [title]="story.storyTitle" 
+  [imgurl]="story.imageUrl" 
+  [details]="story.storyDetails"></app-story-component>
+
 </ion-content>

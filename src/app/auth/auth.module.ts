@@ -9,6 +9,7 @@ import { AuthPageRoutingModule } from './auth-routing.module';
 import { AuthPage } from './auth.page';
 import { RegisterDonorComponent } from './register-donor/register-donor.component';
 import { RegisterHospitalComponent } from './register-hospital/register-hospital.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { RegisterHospitalComponent } from './register-hospital/register-hospital
     IonicModule,
     AuthPageRoutingModule
   ],
-  declarations: [AuthPage,RegisterDonorComponent,RegisterHospitalComponent]
+  declarations: [AuthPage,RegisterDonorComponent,RegisterHospitalComponent,LoginComponent]
 })
 export class AuthPageModule {}

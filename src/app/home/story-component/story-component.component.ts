@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-story-component',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./story-component.component.scss'],
 })
 export class StoryComponentComponent implements OnInit {
+  @Input('title') title: String="default titles"
+  @Input('imgurl') imgurl: String="default urls"
+  @Input('details') details: String="defaykt detauks"
+
 
   constructor() { }
 

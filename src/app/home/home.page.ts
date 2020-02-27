@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HomeService } from './home.service';
+import { story } from '../database/models/models';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  ourStories: story[]
+  constructor(private homeService: HomeService) {
+    this.ourStories= homeService.getStories()
+  }
 
 }

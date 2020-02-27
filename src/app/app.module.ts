@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GenerateAlertPageModule } from './hospital/generate-alert/generate-alert.module';
+import { DbService } from './database/db.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { GenerateAlertPageModule } from './hospital/generate-alert/generate-aler
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    DbService
   ],
   bootstrap: [AppComponent]
 })
