@@ -22,8 +22,11 @@ onContactDonorClicked(){
   this.status="awaiting response..."
 }
 
-goToDonor(){
-//open modal
+lat=this.authService.hospitalLocation.lat
+  lng=this.authService.hospitalLocation.lng
+  latD=this.donor.location.lat
+lngD=this.donor.location.lng
+goToDonor(donor:donor){
 this.presentModal()
 
 }
