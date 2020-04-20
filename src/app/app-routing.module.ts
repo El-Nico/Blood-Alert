@@ -31,11 +31,7 @@ const routes: Routes = [
   {
     path: 'hospital/alerts',
     loadChildren: () => import('./hospital/alerts/alerts.module').then( m => m.AlertsPageModule)
-  },
-  {
-    path: 'someone-needs-your-blood',
-    loadChildren: () => import('./donor/someone-needs-your-blood/someone-needs-your-blood.module').then( m => m.SomeoneNeedsYourBloodPageModule)
-  },
+  }
 ];
 
 @NgModule({

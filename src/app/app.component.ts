@@ -7,10 +7,8 @@ import { switchMap } from 'rxjs/operators';
 import { AuthService } from './auth/auth.service';
 import { DbService } from './database/db.service';
 import { aAlert } from './database/models/models';
-import { SomeoneNeedsYourBloodPage } from './donor/someone-needs-your-blood/someone-needs-your-blood.page';
 import { SomeoneNeedsService } from './donor/someone-needs.service';
 import { GenerateAlertPage } from './hospital/generate-alert/generate-alert.page';
-import { NotificationService } from './notification.service';
 
 
 
@@ -85,16 +83,6 @@ export class AppComponent implements OnInit {
   async presentModal() {
     const modal = await this.modalController.create({
       component: GenerateAlertPage
-    });
-    return await modal.present();
-  }
-
-  private async presentAlertModal(alerts) {
-    const modal = await this.modalController.create({
-      component: SomeoneNeedsYourBloodPage,
-      componentProps: {
-        'alerts': alerts
-      }
     });
     return await modal.present();
   }

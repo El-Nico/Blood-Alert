@@ -13,8 +13,6 @@ import { environment } from '../environments/environment';
 import { GenerateAlertPageModule } from './hospital/generate-alert/generate-alert.module';
 import { DbService } from './database/db.service';
 import { AuthService } from './auth/auth.service';
-import { SomeoneNeedsYourBloodPage } from './donor/someone-needs-your-blood/someone-needs-your-blood.page';
-import { SomeoneNeedsYourBloodPageModule } from './donor/someone-needs-your-blood/someone-needs-your-blood.module';
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
@@ -28,14 +26,12 @@ firebase.initializeApp(environment.firebase)
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [SomeoneNeedsYourBloodPage],
   imports: [BrowserModule, 
     HttpClientModule,
     IonicModule.forRoot(), 
     AppRoutingModule, 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     GenerateAlertPageModule,
-    SomeoneNeedsYourBloodPageModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,

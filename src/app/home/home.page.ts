@@ -38,22 +38,6 @@ export class HomePage implements OnInit, OnDestroy {
     })
   }
 
-  ionViewWillEnter() {
-    // if (this.authService.isDonor) {
-    //   this.topAction = "available"
-    //   this.isDonor = true;
-    // }
-    // else if (!this.authService.isLoggedIn) {
-    //   this.topAction = "Become A Member"
-    // } else {
-    //   //a hospital definitely
-    //   this.isHospital = true;
-    // }
-  }
-
-  editStory(story: story) {
-    console.log(story)
-  }
   deleteStory(story: story) {
     this.dbService.deleteStory(story);
   }

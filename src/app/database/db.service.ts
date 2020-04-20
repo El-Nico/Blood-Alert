@@ -153,7 +153,8 @@ export class DbService {
         availableDonors: [],
         contactedDonors: [],
         declinedDonors: [],
-        acceptedDonor: null
+        acceptedDonor: null,
+        dank: false
       }
       //create a new alert in the database
       this.alertsCollection.add(myAlert).then(ref => {
@@ -298,6 +299,11 @@ export class DbService {
       // set this nibba as the chosen
       this.afs.collection('alerts').doc(`${alertId}`).set({ acceptedDonor: donorId }, { merge: true }).then(() => { console.log("tha candidatf haz bin chozn") })
     })
+    //set dank to true after a while to stop persistent notification on donor side
+    setTimeout(()=>{
+      // set this nibba as the chosen
+      this.afs.collection('alerts').doc(`${alertId}`).set({ dank: true }, { merge: true }).then(() => { console.log("bye bye notif") })
+    },120000);
   }
   //////////DELETE
   deleteStory(story: story) {

@@ -7,16 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ProfileSettingsPageRoutingModule } from './profile-settings-routing.module';
 
 import { ProfileSettingsPage } from './profile-settings.page';
-import { AppModule } from '../app.module';
-import { SomeoneNeedsYourBloodPageModule } from '../donor/someone-needs-your-blood/someone-needs-your-blood.module';
-
+import { AlertNotificationModule } from '../donor/alert-notification/alert-notification.module';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     ProfileSettingsPageRoutingModule,
-    SomeoneNeedsYourBloodPageModule
+    AlertNotificationModule
   ],
   declarations: [ProfileSettingsPage]
 })

@@ -1,13 +1,17 @@
 <div>
-  <div *ngFor="let alert of needs">
-    <div *ngIf="!alert.acceptedDonor">
-      <h1>Someone needs your blood at {{alert.hospitalName}}</h1>
-      <ion-buttons>
-        <ion-button color="success" (click)="onAccepted(alert)">Accept</ion-button>
-        <ion-button color="danger" (click)="onDenied(alert)">Deny</ion-button>
-      </ion-buttons>
+    <div *ngFor="let alert of needs">
+        <div *ngIf="!alert.acceptedDonor">
+            <h1>Someone needs your blood at {{alert.hospitalName}}</h1>
+            <ion-buttons>
+                <ion-button color="success" (click)="onAccepted(alert)">Accept</ion-button>
+                <ion-button color="danger" (click)="onDenied(alert)">Deny</ion-button>
+            </ion-buttons>
+        </div>
+        <div *ngIf="alert.acceptedDonor && !alert.dank">
+            <ion-text color="success">ThankYou for accepting, an ambulance from {{alert.hospitalName}} will be here to pick you up shortly</ion-text>
+        </div>
     </div>
-    <div *ngIf="alert.acceptedDonor"><ion-text color="success">ThankYou for accepting, an ambulance from {{alert.hospitalName}} will be here to pick you up shortly</ion-text></div>
-  </div>
-  <div><h1></h1></div>
+    <div>
+        <h1></h1>
+    </div>
 </div>

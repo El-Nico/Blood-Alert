@@ -24,8 +24,6 @@
                 <app-story-component [title]="story.storyTitle" [imgurl]="story.imageUrl" [details]="story.storyDetails"></app-story-component>
             </ion-item>
             <ion-item-options>
-                <ion-item-option [disabled]="!this.authService.myHospital" color="secondary" (click)="editStory(story)">
-                    <ion-icon slot="start" ios="ellipsis-horizontal" md="ellipsis-vertical" name="create-outline"></ion-icon>Edit</ion-item-option>
                 <ion-item-option [disabled]="!this.authService.myHospital" color="danger" (click)="deleteStory(story)">
                     <ion-icon slot="start" name="trash-outline"></ion-icon>Delete</ion-item-option>
             </ion-item-options>

@@ -18,6 +18,7 @@ export interface aAlert {
     contactedDonors: string[],
     declinedDonors: string[],
     acceptedDonor: string,
+    dank:boolean
 }
 export interface aHospital {
     snapshotId?: string,
