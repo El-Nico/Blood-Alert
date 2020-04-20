@@ -1,0 +1,34 @@
+subscribe to a list of all available users
+store them
+
+perform a (live)prioritization operation ranking by response time
+display the items on the screen with their static image urls
+
+user should be unable to edit stories in donor mode
+
+
+precursor
+4. create dummy users,
+3.create dummy hospital
+2 when logged in as user remove some things, and when logged in as hospital remove 
+some things
+1.set defaults in login form --done
+
+the next steps are, get the current location of the donor, 
+not the set location, prioritize the results based on proximity, 
+send a notification when click contact donor, get the feedback from the
+donor whether yes or no and that will be the logic
+then finally put the database live and compile to mobile apps and 
+that will be the application
+
+current location of donor, in what order
+
+someone needs your blood page
+send them a notification
+send them an email
+
+///final processses
+Register a new hospital
+do the register call to firebase
+get back id, add this user to the hospitals sub collection
+of users

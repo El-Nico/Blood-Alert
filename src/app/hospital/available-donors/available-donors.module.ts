@@ -9,6 +9,7 @@ import { AvailableDonorsPageRoutingModule } from './available-donors-routing.mod
 import { AvailableDonorsPage } from './available-donors.page';
 import { DonorCardComponent } from './donor-card/donor-card.component';
 import { DonorDetailPageModule } from 'src/app/donor-detail/donor-detail.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -16,11 +17,12 @@ import { DonorDetailPageModule } from 'src/app/donor-detail/donor-detail.module'
     FormsModule,
     IonicModule,
     AvailableDonorsPageRoutingModule,
-    DonorDetailPageModule
+    DonorDetailPageModule,
+    SharedModule
   ],
   declarations: [
-    AvailableDonorsPage,
+  AvailableDonorsPage,
   DonorCardComponent
-  ]
+  ],
 })
 export class AvailableDonorsPageModule {}

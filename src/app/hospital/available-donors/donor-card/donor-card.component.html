@@ -1,20 +1,17 @@
 <ion-card>
   <ion-card-header>
     <ion-buttons>
-      <ion-button slot="end" color="success" (click)="onContactDonorClicked()">Contact Donor</ion-button>
-      <ion-button slot="end" color ="primary" (click)="goToDonor()">Go to donor<ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+      <ion-button slot="end" color="success" (click)="onContactDonorClicked()" [disabled]="contactButtonDisabled">Contact Donor</ion-button>
+      <ion-button slot="end" color ="primary" (click)="viewMap()">View Map<ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
     </ion-buttons>
+    <ion-img [src]="imageUrl"></ion-img>
     
-    <ion-card-title>Donor Name</ion-card-title>
-    <ion-card-subtitle>Approximate Response time: 15 mins</ion-card-subtitle>
+    <ion-card-title>{{name}}</ion-card-title>
+    <ion-card-subtitle>Approximate ETA: {{approximateETA}}</ion-card-subtitle>
     <ion-card-subtitle>Status: {{status}}</ion-card-subtitle>
 
   </ion-card-header>
   <ion-card-content>
-    <ion-text>Location:  8 Belvedere Pl, Mountjoy, Dublin, D01 EV27</ion-text>
-    
-   <div class="map-snippet" style="width: 400px;"><img src="https://joomly.net/frontend/web/images/googlemap/map.png"></div> 
-  
-   <!-- <ion-img src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"></ion-img> -->
+    <ion-text>Address:{{address}}</ion-text> 
   </ion-card-content>
 </ion-card>

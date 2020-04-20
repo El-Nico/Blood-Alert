@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "704550099250",
+    "firebase_url": "https://blood-alert-88693.firebaseio.com",
+    "project_id": "blood-alert-88693",
+    "storage_bucket": "blood-alert-88693.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704550099250:android:678b9f9d4b32da442b5f2b",
+        "android_client_info": {
+          "package_name": "com.utshabbohara.bloodalertproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704550099250-e07fpsh5cq53hdt4p5i5lobs1ragcdb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMK9HIzW_KMLDLBKbP0UgIZFW13rsdPGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704550099250-e07fpsh5cq53hdt4p5i5lobs1ragcdb8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,17 +1,25 @@
-<form>
+<form [formGroup]="registerDonorForm">
 <ion-list>
   <ion-item>
-    <ion-label>Name</ion-label>
-    <ion-input></ion-input>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input formControlName="name"></ion-input>
   </ion-item>
+  <ion-item *ngIf="!registerDonorForm.get('name').valid && registerDonorForm.get('name').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
   <ion-item>
-    <ion-label>email</ion-label>
-    <ion-input></ion-input>
+    <ion-label position="floating">email</ion-label>
+    <ion-input formControlName="email"></ion-input>
   </ion-item>
+  <ion-item *ngIf="!registerDonorForm.get('email').valid && registerDonorForm.get('email').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
+ 
+  <ion-item>
+    <ion-label position="floating">password</ion-label>
+    <ion-input formControlName="password" type="password"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="!registerDonorForm.get('password').valid && registerDonorForm.get('password').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
  
   <ion-item>
     <ion-label>blood type</ion-label>
-    <ion-select interface="popover">
+    <ion-select interface="popover" formControlName="bloodType">
       <ion-select-option value="aplus">A+</ion-select-option>
       <ion-select-option value="aminus">A-</ion-select-option>
       <ion-select-option value="bplus">B+</ion-select-option>
@@ -22,11 +30,9 @@
       <ion-select-option value="abminus">AB-</ion-select-option>
     </ion-select>
   </ion-item>
-  <ion-item>
-    Location
-  </ion-item>
-</ion-list>
-<ion-button>Register</ion-button>
+  <ion-item *ngIf="!registerDonorForm.get('bloodType').valid && registerDonorForm.get('bloodType').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
+ </ion-list>
+<ion-button type="submit" (click)="onSubmitRegisterDonorForm()" [disabled]="!registerDonorForm.valid">Register</ion-button>
 <ion-button routerLink="/auth">Already a member?</ion-button>
-<ion-button>Register as Hospital</ion-button>
+<ion-button routerLink="/auth/register-hospital">Register as Hospital</ion-button>
 </form>

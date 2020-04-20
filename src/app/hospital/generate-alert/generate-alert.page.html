@@ -10,11 +10,11 @@
 </ion-header>
 
 <ion-content>
- <form>
+ <form [formGroup]="generateAlertForm">
    <ion-list>
      <ion-item>
        <ion-label>blood type</ion-label>
-          <ion-select interface="popover">
+          <ion-select interface="popover" formControlName="bloodType">
             <ion-select-option value="aplus">A+</ion-select-option>
             <ion-select-option value="aminus">A-</ion-select-option>
             <ion-select-option value="bplus">B+</ion-select-option>
@@ -26,7 +26,11 @@
           </ion-select>
      </ion-item>
      <ion-item>
-      <ion-button (click)="showAvailableDonors()">CREATE ALERT!</ion-button>
+       <ion-label position="floating">alert Title</ion-label>
+       <ion-input formControlName="alertTitle"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-button (click)="onSubmitAlert()" [disabled]="!generateAlertForm.valid">CREATE ALERT!</ion-button>
     </ion-item>
    </ion-list>
  </form>

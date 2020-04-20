@@ -3,21 +3,28 @@
     <ion-buttons slot="start">
     <ion-menu-button menu="m1"></ion-menu-button>
   </ion-buttons>
-    <ion-title>available-donors</ion-title>
+    <ion-title>{{alertTitle}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <donor-card></donor-card>
+    <ion-item *ngFor="let donor of availableDonors">
+      <donor-card
+      [name]="donor.name"
+      [address]="donor.location.address"
+      [donor]="donor"
+      [imageUrl]="donor.location.staticMapImageUrl"
+      [thisAlertId]="myAlertId"
+      ></donor-card>
     </ion-item>
-    <ion-item>
-      <donor-card></donor-card>
-    </ion-item>
-    <ion-item>
-      <donor-card></donor-card>
-    </ion-item>
-
   </ion-list>
+  <app-map-modal 
+  *ngIf="showMap"
+   [title]="title" 
+   [mapCentre]="mapCentre"
+   [selectable]="selectable"
+   [closeButtonText]=""
+   [donor]="donor"        
+  ></app-map-modal>
 </ion-content>

@@ -1,84 +1,61 @@
-
-export class story {
-    constructor(
-        public storyId: String,
-        public storyTitle: String, 
-        public imageUrl: String,
-        public storyDetails: String
-        ){
-    }
+export interface aCoordinates {
+    lat: number;
+    lng: number;
 }
-export class user {
-    constructor(
-        public userId: String,
-        public email: String,
-        public password: String,
-        public name: String
-    ){
-
-    }
+export interface aPlaceLocation extends aCoordinates {
+    address: string;
+    staticMapImageUrl: string;
 }
-export class hospital extends user{
-    constructor(
-        public userId: String,
-        public email: String,
-        public password: String,
-        public name: String
-    ){
-        super(
-            userId,
-            email,
-            password,
-            name
-        )
-    }
+export interface aAlert {
+    snapshotId?: string,
+    alertTitle: string
+    hospitalId: string,
+    hospitalName: string,
+    date: string,
+    bloodType: string,
+    active: boolean,
+    availableDonors: string[],
+    contactedDonors: string[],
+    declinedDonors: string[],
+    acceptedDonor: string,
 }
-export class donor extends user{
-    constructor(
-        public userId: String,
-        public email: String,
-        public password: String,
-        public name: String,
-        public responseTime: number,
-        public location: String,
-        public bloodType: String
-    ){
-        super(
-            userId,
-            email,
-            password,
-            name
-        )
-    }
+export interface aHospital {
+    snapshotId?: string,
+    id?: string,
+    email: string,
+    name: string,
+    location: aPlaceLocation,
+    alerts: aAlert[]
 }
-export class alert {
-    constructor(
-        public date: Date,
-        public bloodType: String,
-        public current: boolean
-    ){
-
-    }
+export interface aDonor {
+    snapshotId?: string,
+    id?: string,
+    email: string,
+    name: string,
+    bloodType: string,
+    location?: aPlaceLocation,
+    fcmToken?: string
 }
-export class DB {
-    //init dummy data
-    //stories, user, hospital, donor, alert
-    constructor(
-        public stories : story[]
-    ){
 
-    }
-   
-    getDb= function() : {
-        stories:{
-            getStories: () => story[]
-    }
-} {
-        return {
-            stories:{
-                getStories: () : story[] => this.stories
-            } 
+export interface story {
+    snapshotId?: string
+    hospitalId: string,
+    storyTitle: string,
+    imageUrl: string,
+    storyDetails: string
+}
 
-        }
-    }
+export interface token{
+    token: string
+}
+///////////////////////
+//location model
+export interface Coordinates {
+    lat: number;
+    lng: number;
+}
+
+export interface PlaceLocation extends Coordinates {
+    address: string;
+    staticMapImageUrl: string;
 }

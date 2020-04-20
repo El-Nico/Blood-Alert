@@ -21,7 +21,7 @@ const routes: Routes = [
     loadChildren: () => import('./profile-settings/profile-settings.module').then( m => m.ProfileSettingsPageModule)
   },
   {
-    path: 'hospital/available-donors',
+    path: 'hospital/available-donors/:alertId',
     loadChildren: () => import('./hospital/available-donors/available-donors.module').then( m => m.AvailableDonorsPageModule)
   },
   {
@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: 'hospital/alerts',
     loadChildren: () => import('./hospital/alerts/alerts.module').then( m => m.AlertsPageModule)
+  },
+  {
+    path: 'someone-needs-your-blood',
+    loadChildren: () => import('./donor/someone-needs-your-blood/someone-needs-your-blood.module').then( m => m.SomeoneNeedsYourBloodPageModule)
   },
 ];
 

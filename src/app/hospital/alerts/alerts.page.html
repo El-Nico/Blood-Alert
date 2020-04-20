@@ -1,16 +1,17 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Alerts</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- a list of alerts clickable if active -->
   <ion-list>
-    <ion-item>alert details Jan 1 2020</ion-item>
-    <ion-item>alert details Jan 2 2020</ion-item>
-    <ion-item>
-      current alert Today
-      <ion-buttons><ion-button color="danger" routerLink="/hospital/available-donors"><ion-icon name="warning-outline"></ion-icon>go to current alert</ion-button></ion-buttons>
-    </ion-item>
+    <ion-item *ngFor="let alert of alerts"  [routerLink]="['/hospital/available-donors/'+alert.snapshotId]">
+      Title:{{alert.alertTitle}} | BloodType:{{alert.bloodType}} | Date:{{alert.date}} | Active?:{{alert.active}}
+  </ion-item>
   </ion-list>
 </ion-content>

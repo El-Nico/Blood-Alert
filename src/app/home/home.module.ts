@@ -6,21 +6,18 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { StoryComponentComponent } from './story-component/story-component.component';
-import { HomeService } from './home.service';
+import { AppModule } from '../app.module';
+import { SomeoneNeedsYourBloodPageModule } from '../donor/someone-needs-your-blood/someone-needs-your-blood.module';
+import { HomePageRoutingModule } from './home-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomePage
-      }
-    ])
+    HomePageRoutingModule,
+    SomeoneNeedsYourBloodPageModule,
   ],
-  declarations: [HomePage, StoryComponentComponent],
-  providers:[HomeService]
+  declarations: [HomePage, StoryComponentComponent]
 })
 export class HomePageModule {}

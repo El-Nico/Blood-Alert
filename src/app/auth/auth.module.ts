@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -10,13 +10,15 @@ import { AuthPage } from './auth.page';
 import { RegisterDonorComponent } from './register-donor/register-donor.component';
 import { RegisterHospitalComponent } from './register-hospital/register-hospital.component';
 import { LoginComponent } from './login/login.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     IonicModule,
-    AuthPageRoutingModule
+    AuthPageRoutingModule,
+    SharedModule
   ],
   declarations: [AuthPage,RegisterDonorComponent,RegisterHospitalComponent,LoginComponent]
 })

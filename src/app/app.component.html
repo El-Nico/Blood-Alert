@@ -14,29 +14,29 @@
         <ion-label>Stories</ion-label>
         </ion-item>
         
-        <ion-item (click)="onGenerateAlertButtonClicked()">
+        <ion-item *ngIf="this.authService.isLoggedIn && !!this.authService.myHospital" (click)="onGenerateAlertButtonClicked()">
           <ion-icon name="alert-outline"></ion-icon>
         <ion-label> Create Alert</ion-label>
         </ion-item>
 
-        <ion-item routerLink="/hospital/alerts">
+        <ion-item *ngIf="this.authService.isLoggedIn && !!this.authService.myHospital" routerLink="/hospital/alerts">
           <ion-icon name="reload-outline"></ion-icon>
-        <ion-label>Alerts</ion-label>
+        <ion-label> Alerts</ion-label>
         </ion-item>
 
-        <ion-item routerLink="/hospital/create-success-story">
+        <ion-item *ngIf="this.authService.isLoggedIn && !!this.authService.myHospital" routerLink="/hospital/create-success-story">
           <ion-icon name="pencil-outline"></ion-icon>
         <ion-label>Create Story</ion-label>
         </ion-item>
 
-        <ion-item routerLink="/profile-settings">
+        <ion-item *ngIf="this.authService.isLoggedIn" routerLink="/profile-settings">
           <ion-icon name="settings-outline"></ion-icon>
         <ion-label>Profile/Settings</ion-label>
         </ion-item>
 
-        <ion-item routerLink="/auth">
+        <ion-item (click)="loginLogout()">
           <ion-icon name="log-out-outline"></ion-icon>
-        <ion-label>Logout</ion-label>
+        <ion-label>{{this.authService.isLoggedIn?"Logout":"Login"}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-content>

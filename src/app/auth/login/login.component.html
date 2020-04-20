@@ -1,17 +1,25 @@
-<ion-content>
-  <div>
-  <ion-list>
-    <ion-item>
-      <ion-label>email</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>password</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-  </ion-list>
-  <ion-button routerLink="/">Login</ion-button>
 
-  <ion-button>not a member?</ion-button>
+<div>
+  <form [formGroup]="loginForm">
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label position="floating">email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched"><p><ion-text color="danger">This field is required put email</ion-text></p></ion-item>
+      <ion-item>
+        <ion-label position="floating">password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
+    </ion-list>
+    <ion-button type="submit" (click)="onSubmitLoginForm()" [disabled]="!loginForm.valid">Login</ion-button>
+  </form>
+  <div>
+    <ion-text> Or Register as a </ion-text>
+    <ion-buttons>
+      <ion-button color="primary" routerLink="/auth/register-donor">Donor</ion-button>
+      <ion-button color="secondary" routerLink="/auth/register-hospital">Hospital</ion-button>
+    </ion-buttons>
+  </div>
 </div>
-</ion-content>

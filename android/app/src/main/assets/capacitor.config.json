@@ -1,0 +1,8 @@
+{
+  "appId": "com.utshabbohara.bloodalertproject",
+  "appName": "BloodAlert",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

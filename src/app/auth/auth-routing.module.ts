@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: 'register-donor', component: RegisterDonorComponent},
       {path: 'register-hospital',component: RegisterHospitalComponent,}
     ]
-  },
+  }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

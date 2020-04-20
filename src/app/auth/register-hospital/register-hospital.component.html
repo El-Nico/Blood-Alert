@@ -1,18 +1,27 @@
-<form>
+<form [formGroup]="registerHospitalForm">
   <ion-list>
     <ion-item>
-      <ion-label>Hospital Name</ion-label>
-      <ion-input></ion-input>
+      <ion-label position="floating">Hospital name</ion-label>
+      <ion-input formControlName="name"></ion-input>
     </ion-item>
+    <ion-item *ngIf="!registerHospitalForm.get('name').valid && registerHospitalForm.get('name').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
     <ion-item>
-      <ion-label>email</ion-label>
-      <ion-input></ion-input>
+      <ion-label position="floating">email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
     </ion-item>
+    <ion-item *ngIf="!registerHospitalForm.get('email').valid && registerHospitalForm.get('email').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
     <ion-item>
-      Location
+      <ion-label position="floating">password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
     </ion-item>
+    <ion-item *ngIf="!registerHospitalForm.get('password').valid && registerHospitalForm.get('password').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
+    <ion-item>
+      <ion-label>location</ion-label>
+      <app-location-picker (locationPick)="onLocationPicked($event)"></app-location-picker>
+    </ion-item>
+    <ion-item *ngIf="!registerHospitalForm.get('location').valid && registerHospitalForm.get('location').touched"><p><ion-text color="danger">This field is required</ion-text></p></ion-item>
   </ion-list>
-  <ion-button>Register</ion-button>
+  <ion-button type="submit" (click)="onSubmitRegisterHospitalForm()" [disabled]="!registerHospitalForm.valid">Register</ion-button>
   <ion-button routerLink="/auth">Already a member?</ion-button>
-  <ion-button>Register as Donor?</ion-button>
+  <ion-button routerLink="/auth/register-donor">Register as Donor?</ion-button>
   </form>

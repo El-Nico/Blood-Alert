@@ -15,6 +15,6 @@ import { AlertsPage } from './alerts.page';
     IonicModule,
     AlertsPageRoutingModule
   ],
-  declarations: [AlertsPage]
+  declarations: [AlertsPage],
 })
 export class AlertsPageModule {}
