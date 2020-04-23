@@ -1,25 +1,20 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>{{title}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="dismiss()">Close</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-img src="../../assets/logo-small.png" slot="start" style="max-width: 39px; max-height: 40px;" routerLink="/"></ion-img>
+        <ion-title>{{title}}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismiss()">Close</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-text>Approximate ETA: {{approximateETA}}</ion-text><br/>
-  <ion-text>Status:{{status}}</ion-text><br/>
-  <ion-text>Donor Location: {{donorAddress}}</ion-text>
-    
-  <app-map-modal
-  [selectable]="selectable"
-[title]="this.title"
-[closeButtonText]="this.closeButtonText"
-[donor]="this.donor"
-[mapCentre]="this.mapCentre"
-  >
- 
-</app-map-modal>
+    <ion-text>Approximate ETA: {{approximateETA}}</ion-text><br/>
+    <ion-text>Status:{{status}}</ion-text><br/>
+    <ion-text>Donor Location: {{donorAddress}}</ion-text>
+
+    <app-map-modal [selectable]="selectable" [title]="this.title" [closeButtonText]="this.closeButtonText" [donor]="this.donor" [mapCentre]="this.mapCentre">
+
+    </app-map-modal>
 
 </ion-content>

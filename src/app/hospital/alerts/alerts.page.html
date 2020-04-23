@@ -1,17 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Alerts</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="m1"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-img src="../../assets/logo-small.png" slot="start" style="max-width: 39px; max-height: 40px;" routerLink="/"></ion-img>
+        <ion-title>Alerts</ion-title>
+        <ion-buttons slot="end">
+            <ion-menu-button menu="m1"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- a list of alerts clickable if active -->
-  <ion-list>
-    <ion-item *ngFor="let alert of alerts"  [routerLink]="['/hospital/available-donors/'+alert.snapshotId]">
-      Title:{{alert.alertTitle}} | BloodType:{{alert.bloodType}} | Date:{{alert.date}} | Active?:{{alert.active}}
-  </ion-item>
-  </ion-list>
+    <!-- a list of alerts clickable if active -->
+    <ion-list>
+        <ion-item *ngFor="let alert of alerts" [routerLink]="['/hospital/available-donors/'+alert.snapshotId]">
+            Title:{{alert.alertTitle}} | BloodType:{{alert.bloodType}} | Date:{{alert.date}} | Active?:{{alert.active}}
+        </ion-item>
+    </ion-list>
 </ion-content>

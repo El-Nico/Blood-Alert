@@ -1,17 +1,13 @@
-<ion-card>
+<ion-card class="homepage-card">
 
-    <ion-card-title>{{title}}</ion-card-title>
-    <ion-item lines="none">
-    
-      <ion-img [src]="imgurl"></ion-img>
-  
-  </ion-item>
+    <ion-card-title padding="10px">{{title}}</ion-card-title>
 
 
-  <ion-card-content>
-    {{details}}
-  </ion-card-content>
+    <ion-img [src]="imgurl" class="homepage-images"></ion-img>
+
+
+
+    <ion-card-content>
+        {{details}}
+    </ion-card-content>
 </ion-card>
-
-
-
