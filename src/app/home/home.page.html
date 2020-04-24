@@ -1,16 +1,34 @@
 <ion-header [translucent]="true">
-    <ion-toolbar>
 
-        <ion-title slot="end">
-            Our Stories
-        </ion-title>
-        <ion-img src="../../assets/logo-small.png" slot="start" style="max-width: 39px; max-height: 40px;" routerLink="/"></ion-img>
-        <ion-buttons slot="end">
-            <ion-menu-button menu="m1"></ion-menu-button>
-        </ion-buttons>
-        <ion-buttons slot="start" *ngIf="this.authService.isLoggedIn===false">
-            <ion-button routerLink="/auth/register-donor">Become A Donor</ion-button>
-        </ion-buttons>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="4" style="display: inline-block;">
+
+                    <ion-img src="../../assets/logo-small.png" style="max-width: 39px; max-height: 40px;" routerLink="/" style="display: inline-block;"></ion-img>
+                    <ion-buttons *ngIf="this.authService.isLoggedIn===false" style="display: inline;" collapse="true">
+                        <ion-button routerLink="/auth/register-donor">Become A Donor</ion-button>
+                    </ion-buttons>
+
+                </ion-col>
+                <ion-col class="ion-align-self-center" size="4">
+                    <div class="ion-text-center">
+                        <ion-title style="display: inline-block;">Blood Alert</ion-title>
+                    </div>
+                </ion-col>
+                <ion-col size="4">
+                    <div class="ion-text-end">
+                        <ion-title style="display: inline-block;">
+                            Our Stories
+                        </ion-title>
+                        <ion-buttons style="display: inline-block; margin-left: 0px;" collapse="true">
+                            <ion-menu-button menu="m1" style="display: inline-block;"></ion-menu-button>
+                        </ion-buttons>
+                    </div>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
     </ion-toolbar>
 </ion-header>
 

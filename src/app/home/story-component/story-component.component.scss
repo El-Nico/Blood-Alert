@@ -1,8 +1,18 @@
 .homepage-images {
     max-height: 565px;
     max-width: 870px;
+    width: 870px;
+    height: 565px;
 }
 
 .homepage-card {
     max-width: 870px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .homepage-images {
+        width: 100%;
+        height: 30vh;
+    }
 }
