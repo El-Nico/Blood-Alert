@@ -48,10 +48,7 @@ export class AppComponent implements OnInit {
     //if a donor start the subscription to alerts
     this.authService.__donor.pipe(switchMap(donorValue => {
       if (donorValue) {
-        ///set the initial location
-
-        ///then return an interval that updates location every 2 mins
-        ///5 minute
+        //get all alerts
         return this.dbService.getAlerts()
       }
       return of([])
