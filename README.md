@@ -27,8 +27,8 @@ application built in Angular and IONIC with a firebase backend and firebase clou
 ### **FrontEnd**
 #### Framework
 Angular9, Ionic,
-#### Markup
-HTML, CSS
+#### Markup & Styling
+HTML, CSS/SASS/SCSS
 
 ### **BackEnd**
 Firebase Firestore, Firebase Cloud Functions
